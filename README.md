@@ -70,43 +70,44 @@ Restart MongoDB:
 ```bash
 sudo systemctl restart mongod
 ```
+
 🧱 4. Create Admin User & Enable Authentication
 Start the mongo shell:
 
-bash
-Copy
-Edit
+```bash
 mongosh --port 27018
+```
+
 Switch to admin DB and create user:
 
-javascript
-Copy
-Edit
+```javascript
 use admin
 db.createUser({
   user: "adminuser",
   pwd: "StrongPassword123",
   roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
 })
+```
+
 Exit shell:
 
-bash
-Copy
-Edit
+```bash
 exit
+```
+
 Enable authentication in config:
 
-bash
-Copy
-Edit
+```bash
 sudo nano /etc/mongod.conf
+```
+
 Add or uncomment:
 
-yaml
-Copy
-Edit
+```yaml
 security:
   authorization: enabled
+```
+
 Restart MongoDB:
 
 bash
