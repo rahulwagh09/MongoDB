@@ -110,46 +110,49 @@ security:
 
 Restart MongoDB:
 
-bash
-Copy
-Edit
+```bash
 sudo systemctl restart mongod
+```
+
 Test login:
 
-bash
-Copy
-Edit
+```bash
 mongosh --port 27018 -u "adminuser" -p --authenticationDatabase "admin"
-🔓 5. Configure Firewall (firewalld) and AWS Security Group
+```
+
+### 🔓 5. Configure Firewall (firewalld) and AWS Security Group
 🔥 On RHEL (firewalld)
-bash
-Copy
-Edit
+
+```bash
 sudo firewall-cmd --permanent --add-port=27018/tcp
 sudo firewall-cmd --reload
-🌐 On AWS EC2 Security Group
-Go to AWS EC2 console
+```
 
-Find the Security Group attached to your instance
+🌐 On AWS EC2 Security Group
+Go to AWS EC2 console and Find the Security Group attached to your instance
 
 Add Inbound Rule:
-
+```
 Type: Custom TCP
 
 Port: 27018
 
 Source: Your IP or 0.0.0.0/0 (for testing only)
+```
 
-✅ Summary
-Task	Status
-MongoDB Installed	✅
-Port Changed	✅
-Admin User Created	✅
-Authentication Enabled	✅
-Firewall & SG Updated	✅
+### ✅ Summary
+---------------------------------
+Task	                  |  Status
+---------------------------------
+MongoDB Installed	      |   ✅
+---------------------------------
+Port Changed            | 	✅
+---------------------------------
+Admin User Created      |	  ✅
+---------------------------------
+Authentication Enabled  |  	✅
+---------------------------------
+Firewall & SG Updated	  |   ✅
+---------------------------------
 
-📎 References
-Official MongoDB Docs
-
-EC2 Security Groups
 
