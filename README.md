@@ -23,7 +23,7 @@ Set up the latest stable MongoDB version on a **RHEL 8** EC2 instance, change th
 ssh -i your-key.pem ec2-user@<public-ip>
 ```
 
-##📦 2. Install MongoDB (Latest Version)
+##  📦 2. Install MongoDB (Latest Version)
 
 ### Create the MongoDB YUM repo:
 
