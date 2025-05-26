@@ -141,18 +141,15 @@ Source: Your IP or 0.0.0.0/0 (for testing only)
 ```
 
 ### ✅ Summary
----------------------------------
-Task	                  |  Status
----------------------------------
-MongoDB Installed	      |   ✅
----------------------------------
-Port Changed            | 	✅
----------------------------------
-Admin User Created      |	  ✅
----------------------------------
-Authentication Enabled  |  	✅
----------------------------------
-Firewall & SG Updated	  |   ✅
----------------------------------
 
+| Task	                  |  Status  |
+| MongoDB Installed	      |   ✅    |
+| Port Changed            | 	✅    |
+| Admin User Created      |	  ✅    |
+
+| Authentication Enabled  |  	✅    |
+
+| Firewall & SG Updated	  |   ✅    |
+
+----------------------------------------------------------
 
