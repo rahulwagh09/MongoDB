@@ -140,16 +140,16 @@ Port: 27018
 Source: Your IP or 0.0.0.0/0 (for testing only)
 ```
 
-### ✅ Summary
+## ✅ MongoDB Setup Summary
 
-| Task	                  |  Status  |
-| MongoDB Installed	      |   ✅    |
-| Port Changed            | 	✅    |
-| Admin User Created      |	  ✅    |
+| Task                        | Status |
+|-----------------------------|--------|
+| MongoDB Installed           | ✅     |
+| Port Changed                | ✅     |
+| Admin User Created          | ✅     |
+| Authentication Enabled      | ✅     |
+| Firewall & SG Updated       | ✅     |
 
-| Authentication Enabled  |  	✅    |
-
-| Firewall & SG Updated	  |   ✅    |
 
 ----------------------------------------------------------
 
