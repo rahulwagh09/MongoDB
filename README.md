@@ -25,7 +25,7 @@ ssh -i your-key.pem ec2-user@<public-ip>
 
 ##  📦 2. Install MongoDB (Latest Version)
 
-### Create the MongoDB YUM repo:
+###  Create the MongoDB YUM repo:
 
 ```bash
 cat <<EOF | sudo tee /etc/yum.repos.d/mongodb-org.repo
@@ -38,27 +38,27 @@ gpgkey=https://www.mongodb.org/static/pgp/server-7.0.asc
 EOF
 ```
 
-### Install MongoDB:
+###  Install MongoDB:
 
 ```bash
 sudo dnf install -y mongodb-org
 ```
 
-### Enable and start the service:
+###  Enable and start the service:
 
 ```bash
 sudo systemctl enable mongod
 sudo systemctl start mongod
 ```
 
-## 🔧 3. Change Default Port (Optional: e.g., 27018)
+##  🔧 3. Change Default Port (Optional: e.g., 27018)
 ### Edit MongoDB config:
 
 ```bash
 sudo nano /etc/mongod.conf
 ```
 
-### Update the port under net:
+###  Update the port under net:
 
 ```yaml
 net:
@@ -66,20 +66,20 @@ net:
   bindIp: 0.0.0.0
 ```
 
-### Restart MongoDB:
+###  Restart MongoDB:
 
 ```bash
 sudo systemctl restart mongod
 ```
 
-## 🧱 4. Create Admin User & Enable Authentication
-### Start the mongo shell:
+##  🧱 4. Create Admin User & Enable Authentication
+###  Start the mongo shell:
 
 ```bash
 mongosh --port 27018
 ```
 
-### Switch to admin DB and create user:
+###  Switch to admin DB and create user:
 
 ```javascript
 use admin
@@ -90,49 +90,49 @@ db.createUser({
 })
 ```
 
-### Exit shell:
+###  Exit shell:
 
 ```bash
 exit
 ```
 
-### Enable authentication in config:
+###  Enable authentication in config:
 
 ```bash
 sudo nano /etc/mongod.conf
 ```
 
-### Add or uncomment:
+###  Add or uncomment:
 
 ```yaml
 security:
   authorization: enabled
 ```
 
-### Restart MongoDB:
+###  Restart MongoDB:
 
 ```bash
 sudo systemctl restart mongod
 ```
 
-### Test login:
+###  Test login:
 
 ```bash
 mongosh --port 27018 -u "adminuser" -p --authenticationDatabase "admin"
 ```
 
-## 🔓 5. Configure Firewall (firewalld) and AWS Security Group
-### 🔥 On RHEL (firewalld)
+##  🔓 5. Configure Firewall (firewalld) and AWS Security Group
+###  🔥 On RHEL (firewalld)
 
 ```bash
 sudo firewall-cmd --permanent --add-port=27018/tcp
 sudo firewall-cmd --reload
 ```
 
-### 🌐 On AWS EC2 Security Group
-* Go to AWS EC2 console and Find the Security Group attached to your instance
+###  🌐 On AWS EC2 Security Group
+*** Go to AWS EC2 console and Find the Security Group attached to your instance
 
-### Add Inbound Rule:
+###  Add Inbound Rule:
 ```
 Type: Custom TCP
 
@@ -141,7 +141,7 @@ Port: 27018
 Source: Your IP or 0.0.0.0/0 (for testing only)
 ```
 
-## ✅ MongoDB Setup Summary
+##  ✅ MongoDB Setup Summary
 
 | Task                        | Status |
 |-----------------------------|--------|
