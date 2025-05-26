@@ -130,7 +130,7 @@ sudo firewall-cmd --reload
 ```
 
 ###  🌐 On AWS EC2 Security Group
-***  Go to AWS EC2 console and Find the Security Group attached to your instance
+**  Go to AWS EC2 console and Find the Security Group attached to your instance
 
 ###  Add Inbound Rule:
 ```
